@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 
 app = Flask(__name__)
@@ -6,8 +6,9 @@ app = Flask(__name__)
 
 @app.errorhandler(404)
 def not_found(error):
-    return render_template('404.html')
+    return '<H1>Página no encontrada</H1>'
+
 
 @app.route("/")
-def hello_world():
-    return "<p>Hello, World!</p>"
+def index():
+    return render_template('index.html')
