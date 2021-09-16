@@ -9,6 +9,11 @@ An approach to Akinator.
 
 `pip install -r requirements.txt`
 
-## Heroku
+## Run
+
+### Local
+`python wsgi.py`
+
+### Heroku
 
 [HerokuApp](https://akifruits.herokuapp.com/)
