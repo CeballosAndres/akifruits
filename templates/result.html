@@ -1,0 +1,18 @@
+<!-- Vista para presentar la posible respuesta adivinanda -->
+{% extends 'main.html' %}
+
+{% block body %}
+
+<body>
+    <div class="container mt-5 pt-5" style="text-align: center;">
+        <h5>Pregunta #n</h5>
+        <h2 class="mb-5"><strong>Tu fruta es:</strong></h2>
+        <img class="result-img" style="width: 300px; height: 200px;">
+        <div class="btn-group mt-3" role="group">
+            <button class="btn btn-success my-btn" id="yes" type="button">Si</button>
+            <button class="btn btn-danger my-btn" id="no" type="button">No</button>
+        </div><a class="text-center mt-5" href="#">Volver a jugar</a>
+    </div>
+</body>
+
+{% endblock %}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>AkiFruit</title>
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/styles.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md" style="background: #6a4c93;">
+        <div class="container-fluid"><a class="navbar-brand" href="#"
+                style="color: rgba(255,255,255,0.9);"><strong>AkiFruit</strong></a><button data-toggle="collapse"
+                class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav ml-auto" style="color: rgb(255,255,255);">
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#infoModal">Acerca
+                        de</button>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    {% block body %}
+
+
+
+    {% endblock %}
+
+    <footer class="footer-basic">
+        <p class="copyright">TecNM Campus Colima © 2021</p>
+    </footer>
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Modal -->
+    <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Informacion</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center mb-5">
+                        <h4>Ing. en Sistemas Computacionales</h4>
+                        <h5>Inteligencia Artificial - Poyecto U1 -</h5>
+                    </div>
+                    <b>Integrantes</b>
+                    <ul>
+                        <li>Arteaga Alvarez Selene Elizabeth</li>
+                        <li>Ceballos Vadillo Jose Andres</li>
+                        <li>Centeno Alcaraz Alejandra</li>
+                        <li>Lobato Velazquez Owen</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</html>
