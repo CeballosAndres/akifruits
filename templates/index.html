@@ -23,6 +23,20 @@
         <h5>Pregunta #n</h5>
         <h2 class="mb-5"><strong>Pregunta X</strong></h2>
         <div class="btn-group-vertical mt-3" role="group"><button class="btn btn-success my-btn" id="si" type="button">Si</button><button class="btn btn-danger my-btn" id="no" type="button">No</button><button class="btn btn-primary bg-secondary my-btn" id="nose" type="button">No se</button></div><a class="text-center mt-5" href="#">Volver a jugar</a>
+   
+        <div>
+            <table border = 1>
+                {% for key, value in nodo.items() %}
+            
+                <tr>
+                   <th> {{ key }} </th>
+                   <td> {{ value }} </td>
+                </tr>
+            
+                {% endfor %}
+             </table>
+        </div>
+
     </div>
     <footer class="footer-basic">
         <p class="copyright">TecNM Campus Colima © 2021</p>
