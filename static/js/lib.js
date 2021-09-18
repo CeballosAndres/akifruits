@@ -35,8 +35,6 @@ function getNextNode(res) {
             $('#no').attr({"onclick": "window.location='/fail/"+data.node+"'", "role": "link"});
         }
     });
+    let number = $('#question-number').text();
+    $('#question-number').text(parseInt(number)+1);
 };
-
-function visitPage(){
-    window.location='http://www.example.com';
-}
