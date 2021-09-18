@@ -6,14 +6,17 @@
 
 <body>
     <div class="container mt-5 pt-5" style="text-align: center;">
-        <label class="text-center" for="new-fruit">En que fruta pensabas?</label>
-        <div class="container col-md-6">
-            <input type="text" class="form-control mb-4" name="new-fruit" placeholder="Fruta">
-            <label for="new-fruit-characteristic">Que <strong>caracteristica </strong>tiene esa fruta que <strong>no
-                </strong>tenga _ ?</label>
-            <input type="text" class="form-control" name="new-fruit-characteristic" placeholder="Caracteristica">
-            <button class="btn btn-primary btn-lg border rounded-pill mt-5" type="submit">Guardar</button>
-        </div>
+        <form method="post">
+
+            <label class="text-center" for="new-fruit">En que fruta pensabas?</label>
+            <div class="container col-md-6">
+                <input type="text" class="form-control mb-4" name="new-fruit" placeholder="Fruta" required>
+                <label for="new-fruit-characteristic">Qué <strong>característica </strong>tiene esa fruta que <strong>no
+                </strong>tenga (el/la) {{ current_node.text }} ?</label>
+                <input type="text" class="form-control" name="new-fruit-characteristic" placeholder="Caracteristica" required>
+                <button class="btn btn-primary btn-lg border rounded-pill mt-5" type="submit">Guardar</button>
+            </div>
+        </form>
     </div>
 </body>
 

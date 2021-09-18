@@ -1,34 +1,63 @@
+from threading import current_thread
 from flask import Flask, render_template, request, jsonify, redirect
 from mongoapi import MongoAPI
 
 app = Flask(__name__)
 
-data = {'database':'akifruits', 'collection':'tree'}
+data = {'database': 'akifruits', 'collection': 'tree'}
+
 
 @app.errorhandler(404)
 def not_found(error):
     return '<H1>Página no encontrada</H1>'
 
+
 @app.route('/')
 def index():
-    return "<h1>Bienvenido</h1>"
+    return render_template('welcome.html')
 
-@app.route("/game", methods=['GET','POST'])
+
+@app.route("/game", methods=['GET', 'POST'])
 def game():
     db = MongoAPI(data)
     if request.method == 'GET':
         # Display root node when request is by get
         response = db.get_root()
-        return render_template('game.html', current_node = response)
+        return render_template('game.html', current_node=response)
+
 
 @app.route("/end", methods=['GET'])
 def end():
     return render_template('end.html')
 
-@app.route("/fail/<id>", methods=['GET'])
+
+@app.route("/fail/<id>", methods=['GET', 'POST'])
 def fail(id):
-    print(id)
-    return render_template('fail.html')
+    db = MongoAPI(data)
+    response = db.get_node(id)
+    if request.method == 'POST':
+        if request.form['new-fruit'] and request.form['new-fruit-characteristic']:
+            dataRight = {'document': response}
+            dataLeft = {
+                'document':
+                {'text': request.form['new-fruit'].lower()}
+            }
+
+            nLeft = db.write(dataLeft)
+            nRight = db.write(dataRight)
+
+            dataFather = {
+                'text': request.form['new-fruit-characteristic'].lower(),
+                'nLeft': nLeft['Document_ID'],
+                'nRight': nRight['Document_ID']
+            }
+
+            db.update(id, dataFather)
+
+            return redirect('/end')
+
+    return render_template('fail.html', current_node=response)
+
 
 @app.route("/next-node", methods=['POST'])
 def next_node():
@@ -39,10 +68,7 @@ def next_node():
     response = db.get_node(current_node)
     if answer == 'yes':
         son = response['nLeft']
-    else: 
+    else:
         son = response['nRight']
-    
+
     return jsonify({'node': son, 'body': db.get_node(son)})
-    
-
-
