@@ -38,6 +38,7 @@ class MongoAPI:
         log.info('Retriving a single document.')
         obj = ObjectId(id)
         response = self.collection.find_one(obj)
+        del response['_id']
         return response
 
     def get_root(self):
@@ -55,14 +56,29 @@ class MongoAPI:
 
 
 if __name__ == "__main__":
-    db = MongoAPI({'database': 'akifruits', 'collection': 'test2'})
+    db = MongoAPI({'database': 'akifruits', 'collection': 'tree'})
+
+    db.collection.drop()
+
+    dataLeft = {
+        "text": "manzana",
+        "img": "link:manzana",
+    }
+
+    nLeft = db.write({"document": dataLeft})
+
+    dataRight = {
+        "text": "platano",
+        "img": "link:platano",
+    }
+
+    nRight = db.write({"document": dataRight})
 
     root = {
-        "text": "manzana",
-        "img": "link",
-        "nLeft": "",
-        "nRight": "",
+        "text": "es rojo",
+        "nLeft": nLeft['Document_ID'],
+        "nRight": nRight['Document_ID'],
         "root": "true"
     }
 
-    db.write({"document": root})
+    father = db.write({"document": root})

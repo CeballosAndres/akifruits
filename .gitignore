@@ -19,3 +19,5 @@ _mailinglist
 .idea/
 docs/_build/
 .vscode
+.vs
+designs/

@@ -1,0 +1,20 @@
+<!-- Vista principal e inicial -->
+{% extends 'main.html' %}
+
+{% block body %}
+
+<div class="container mt-5 pt-5" style="text-align: center;">
+    <h5>Pregunta <strong id="#question-number">1</strong></h5>
+    <h2 class="mb-5">¿Tu fruto <strong id="text">{{ current_node.text }}</strong>?</h2>
+
+        <input type="text" id="current-node" value="{{current_node._id}}" hidden>
+        <div class="btn-group-vertical mt-3" role="group">
+            <button onclick="getNextNode('yes');" class="btn btn-success my-btn" id="yes">Si</button>
+            <button onclick="getNextNode('no');" class="btn btn-danger my-btn" id="no">No</button>
+            <button class="btn btn-primary bg-secondary my-btn" id="nose">No sé</button>
+        </div>
+    <a class="text-center mt-5" href="#" hidden>Volver a jugar</a>
+</div>
+</body>
+
+{% endblock %}
