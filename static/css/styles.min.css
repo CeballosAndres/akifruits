@@ -31,6 +31,8 @@ html, body {
 
 #no:hover{background-color:#e04044}
 
+#description{display: none; padding: 20px 200px 20px 200px;}
+
 /* #nose{visibility:hidden}a{display:block} */
 
 .result-img{display:block;margin:auto}label{font-size:1.125rem}
@@ -39,4 +41,3 @@ html, body {
 
 .app-title{ font-family: 'Comic Sans MS', 'Trebuchet MS', Arial, Helvetica, sans-serif; }
 
-.description{display: none; padding: 20px 200px 20px 200px;}
