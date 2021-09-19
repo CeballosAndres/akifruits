@@ -1,5 +1,6 @@
 $(document).ready(function () {
     localStorage.removeItem('nodes');
+    $('.without-nodes').hide();
 });
 
 function getNextNode(res) {
@@ -26,6 +27,7 @@ function getNextNode(res) {
                 if (data.body.nLeft && data.body.nRight) {
                     // En caso de que sea padre
                     $('#text').text(data.body.text);
+
                     $('#current-node').val(data.node);
                     $('#right-node').val(data.body.nRight);
                     $('#left-node').val(data.body.nLeft);
@@ -36,15 +38,26 @@ function getNextNode(res) {
                         "onclick": "getNextNode('no')"
                     });
                     $('#image').hide();
+                    $('#description').hide();
+                    $('#scientific-name').hide();
                     $('#nose').show();
                 } else {
                     // En caso de que sea hoja
+                    if (data.body.description) {
+                        $('#description').text(data.body.description);
+                        $('#description').show();
+                    }
+                    if (data.body['scientific-name']) {
+                        $('#scientific-name').text(data.body['scientific-name']);
+                        $('#scientific-name').show();
+                        $('#scientific-name-p').show();
+                    }
 
                     if (data.body.img){
-                        console.log(data.body.img)
                         $('#image').attr("src", data.body.img);
                         $('#image').show(); 
                     }
+
                     $('#text').text("es " + data.body.text);
                     $('#nose').hide();
                     $('#yes').attr({

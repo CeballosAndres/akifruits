@@ -5,17 +5,19 @@
 {% block body %}
 
 <body>
-    <div class="container mt-5 pt-5" style="text-align: center;">
+    <div class="container mt-2 pt-5" style="text-align: center;">
         <form method="post">
 
             <div class="container col-md-6">
                 <label class="text-center" for="new-fruit">¿En qué fruta pensabas?</label>
                 <input type="text" class="form-control mb-2" name="new-fruit" placeholder="Fruta" required>
-                <input type="text" class="form-control mb-4" name="image-fruit" placeholder="Link a imagen (opcional)">
+                <input type="text" class="form-control mb-2" name="scientific-name-fruit" placeholder="Nombre científico">
+                <input type="text" class="form-control mb-2" name="image-fruit" placeholder="Link a imagen (opcional)">
+                <textarea class="form-control mb-4" name="description-fruit" placeholder="Descripción (máx 300 caracteres)" maxlength="300" rows="3"></textarea>
                 <label for="new-fruit-characteristic">¿Qué <strong>característica </strong>tiene esa fruta que <strong>no
                 </strong>tenga (el/la) {{ current_node.text }} ?</label>
-                <input type="text" class="form-control mt-1" name="new-fruit-characteristic" placeholder="Caracteristica" required>
-                <button class="btn btn-primary btn-lg border rounded-pill mt-5" type="submit">Guardar</button>
+                <input type="text" class="form-control mt-1" name="new-fruit-characteristic" placeholder="Característica" required>
+                <button class="btn btn-primary btn-lg border rounded-pill mt-3" type="submit">Guardar</button>
             </div>
         </form>
     </div>

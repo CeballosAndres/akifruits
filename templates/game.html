@@ -6,6 +6,7 @@
 <div class="container mt-3 pt-5" style="text-align: center;">
     <h5>Pregunta <strong id="question-number">1</strong></h5>
     <h2 class="mb-4">¿Tu fruto <strong id="text">{{ current_node.text }}</strong>?</h2>
+    <p class="without-nodes" id="scientific-name-p" style="display: none;">Nombre científico <i id="scientific-name"></i></p>
         <input class="form-control" type="text" id="current-node" value="{{current_node._id}}" hidden>
         <input class="form-control" type="text" id="left-node" value="{{current_node.nLeft}}" hidden>
         <input class="form-control"type="text" id="right-node" value="{{current_node.nRight}}" hidden>
@@ -16,8 +17,9 @@
             <button onclick="getNextNode('no');" class="btn btn-danger my-btn" id="no"> No  </button>
             <button onclick="saveNode();"class="btn btn-primary bg-secondary my-btn" id="nose">No sé</button>
         </div>
-        <img src="#" id="image" class="result-img" style="width: 300px; height: 200px; display:none" >
-</div>
+        <img src="#" id="image" class="result-img without-nodes" style="width: 300px; height: 200px; display:none" >
+        <p id="description" class="without-nodes" style="display: none;"></p>
+    </div>
 </body>
 
 {% endblock %}

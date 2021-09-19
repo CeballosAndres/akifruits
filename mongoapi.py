@@ -54,6 +54,15 @@ class MongoAPI:
                   0 else "Nothing was updated."}
         return output
 
+    def remove_data(self, id, data):
+        log.info('Removing data from document')
+        filt = {"_id": ObjectId(id)}
+        new_data = {"$unset": data}
+        response = self.collection.update_one(filt, new_data)
+        output = {'Status': 'Successfully Updated' if response.modified_count >
+                  0 else "Nothing was updated."}
+        return output
+
 
 if __name__ == "__main__":
     db = MongoAPI({'database': 'akifruits', 'collection': 'tree'})
@@ -62,20 +71,24 @@ if __name__ == "__main__":
 
     dataLeft = {
         "text": "fresa",
-        "img": "https://pixabay.com/get/g8469cf79723db7ff919ec3152b38dd3132d0258bb9563968ef698a0c0110a2fe515fc0369af3b81cefbe3af46d313024_640.jpg",
+        "scientific-name" : "fragaria vesca var. hortensis",
+        "description" : "La fresa es un fruto de color rojo brillante, suculento y fragante que se obtiene de la planta que recibe su mismo nombre. En Occidente es considerada la 'reina de las frutas'. Además de poderse comer cruda se puede consumir como compota, mermelada,... Es empleada con fines medicinales ya que posee excelentes propiedades que ayudan a preservar la salud.",
+        "img": "http://www.frutas-hortalizas.com/img/fruites_verdures/95a.jpg"
     }
 
     nLeft = db.write({"document": dataLeft})
 
     dataRight = {
-        "text": "jícama",
-        "img": "https://pixabay.com/get/g50eaab83c66d05532fede4f7e221edf77ca52e00111c2868ec1a6e607a16b57ed8c6e8c1c60682422b59013628bd1431_640.jpg",
+        "text": "naranja",
+        "scientific-name" : "citrus sinensis",
+        "description" : "La naranja es un fruto redondo, color naranja, consumido mayoritariamente en invierno. La pulpa del interior es también anaranjada y está formada por pequeñas bolsitas llenas de zumo.",
+        "img": "http://www.frutas-hortalizas.com/img/fruites_verdures/22a.jpg"
     }
 
     nRight = db.write({"document": dataRight})
 
     root = {
-        "text": "es dulce",
+        "text": "es baya",
         "nLeft": nLeft['Document_ID'],
         "nRight": nRight['Document_ID'],
         "root": "true"

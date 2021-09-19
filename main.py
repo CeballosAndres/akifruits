@@ -40,8 +40,12 @@ def fail(id):
             dataRight = {'document': response}
             dataLeft = {
                 'document':
-                {'text': request.form['new-fruit'].lower(),
-                 'img': request.form['image-fruit']}
+                {
+                    'text': request.form['new-fruit'].lower(),
+                    'scientific-name': request.form['scientific-name-fruit'].lower(),
+                    'description' : request.form['description-fruit'],
+                    'img': request.form['image-fruit']
+                }
             }
 
             nLeft = db.write(dataLeft)
@@ -54,6 +58,7 @@ def fail(id):
             }
 
             db.update(id, dataFather)
+            db.remove_data(id, {'img':'', 'description':'', 'scientific-name':''})
 
             return redirect('/end')
 
