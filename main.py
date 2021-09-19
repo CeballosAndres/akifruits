@@ -1,5 +1,5 @@
 from threading import current_thread
-from flask import Flask, render_template, request, jsonify, redirect
+from flask import Flask, json, render_template, request, jsonify, redirect
 from mongoapi import MongoAPI
 
 app = Flask(__name__)
@@ -66,9 +66,11 @@ def next_node():
     answer = request.form['answer']
 
     response = db.get_node(current_node)
-    if answer == 'yes':
-        son = response['nLeft']
+    if "nLeft" in response and 'nRight' in response:
+        if answer == 'yes':
+            son = response['nLeft']
+        else:
+            son = response['nRight']
+        return jsonify({'node': son, 'body': db.get_node(son)})
     else:
-        son = response['nRight']
-
-    return jsonify({'node': son, 'body': db.get_node(son)})
+        return jsonify({'error': 'Do not have more children'})
