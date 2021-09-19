@@ -11,7 +11,10 @@
 
 <body>
     <nav class="navbar navbar-light navbar-expand-md" style="background: #6a4c93;">
-        <div class="container-fluid"><a class="navbar-brand" href="{{ url_for('index') }}"
+        <a class="navbar-brand" href="#">
+            <img src="/static/img/Logo.svg" width="30" height="30" alt="Logo AkiFruits">
+          </a>
+        <div class="container-fluid"><a class="navbar-brand app-title" href="{{ url_for('index') }}"
                 style="color: rgba(255,255,255,0.9);"><strong>AkiFruit</strong></a><button data-toggle="collapse"
                 class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
                     class="navbar-toggler-icon"></span></button>
@@ -43,7 +46,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Informacion</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Información</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -60,9 +63,6 @@
                         <li>Centeno Alcaraz Alejandra</li>
                         <li>Lobato Velazquez Owen</li>
                     </ul>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>

@@ -5,9 +5,10 @@
 
 <body>
     <div class="container text-center">
-        <h1 class="text-center my-4">Gracias por jugar AkiFruit!</h1>
-        <img class="final-img" width="200px" height="200px"> <!-- Posible agregar una imagen de despedida -->
-        <a class="text-center mt-5" href="{{ url_for('game') }}">Jugar de nuevo!</a>
+        <h1 class="app-title my-4">Gracias por jugar AkiFruit!</h1>
+
+        <!-- <img class="final-img" width="200px" height="200px">  Posible agregar una imagen de despedida -->
+        <div><a class="btn btn-primary btn-lg border rounded-pill mt-5" href="{{ url_for('game') }}">Jugar de nuevo!</a></div>
     </div>
 </body>
 {% endblock %}
