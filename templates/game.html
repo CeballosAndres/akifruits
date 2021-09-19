@@ -3,17 +3,17 @@
 
 {% block body %}
 <body>
-<div class="container mt-5 pt-5" style="text-align: center;">
+<div class="container mt-3 pt-5" style="text-align: center;">
     <h5>Pregunta <strong id="question-number">1</strong></h5>
-    <h2 class="mb-5">¿Tu fruto <strong id="text">{{ current_node.text }}</strong>?</h2>
+    <h2 class="mb-4">¿Tu fruto <strong id="text">{{ current_node.text }}</strong>?</h2>
         <input class="form-control" type="text" id="current-node" value="{{current_node._id}}" hidden>
         <input class="form-control" type="text" id="left-node" value="{{current_node.nLeft}}" hidden>
         <input class="form-control"type="text" id="right-node" value="{{current_node.nRight}}" hidden>
 
         
-        <div class="btn-group-vertical mt-3" role="group">
-            <button onclick="getNextNode('yes');" class="btn btn-success my-btn" id="yes">Si</button>
-            <button onclick="getNextNode('no');" class="btn btn-danger my-btn" id="no">No</button>
+        <div class="btn-group-vertical mt-2 mb-2" role="group">
+            <button onclick="getNextNode('yes');" class="btn btn-success my-btn" id="yes"> Si  </button>
+            <button onclick="getNextNode('no');" class="btn btn-danger my-btn" id="no"> No  </button>
             <button onclick="saveNode();"class="btn btn-primary bg-secondary my-btn" id="nose">No sé</button>
         </div>
         <img id="image" class="result-img" style="width: 300px; height: 200px; display:none" >
