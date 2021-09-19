@@ -14,7 +14,6 @@ function getNextNode(res) {
         .done(function (data) {
             // Controla si se trata de hoja o de un padre
             if (data.error) {
-                console.log(data.error)
                 $('#yes').attr({
                     "onclick": "window.location='/end'",
                     "role": "link"
@@ -36,13 +35,17 @@ function getNextNode(res) {
                     $('#no').attr({
                         "onclick": "getNextNode('no')"
                     });
-
                     $('#image').hide();
                     $('#nose').show();
                 } else {
                     // En caso de que sea hoja
+
+                    if (data.body.img){
+                        console.log(data.body.img)
+                        $('#image').attr("src", data.body.img);
+                        $('#image').show(); 
+                    }
                     $('#text').text("es " + data.body.text);
-                    $('#image').show();
                     $('#nose').hide();
                     $('#yes').attr({
                         "onclick": "window.location='/end'",
@@ -57,7 +60,6 @@ function getNextNode(res) {
                         $('#no').attr({
                             "onclick": "getNextNode('no')"
                         });
-                        console.log('ejecutada')
                     }
                 }
             }
@@ -80,7 +82,6 @@ function pushLocalNode() {
 }
 
 function saveNode() {
-    console.log('guardando')
     let node = $('#right-node').val();
     if (localStorage.getItem('nodes')) {
         // En caso de que existan nodos guardados

@@ -40,7 +40,8 @@ def fail(id):
             dataRight = {'document': response}
             dataLeft = {
                 'document':
-                {'text': request.form['new-fruit'].lower()}
+                {'text': request.form['new-fruit'].lower(),
+                 'img': request.form['image-fruit']}
             }
 
             nLeft = db.write(dataLeft)

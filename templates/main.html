@@ -11,11 +11,9 @@
 
 <body>
     <nav class="navbar navbar-light navbar-expand-md" style="background: #6a4c93;">
-        <a class="navbar-brand" href="#">
-            <img src="/static/img/Logo.svg" width="30" height="30" alt="Logo AkiFruits">
-          </a>
         <div class="container-fluid"><a class="navbar-brand app-title" href="{{ url_for('index') }}"
-                style="color: rgba(255,255,255,0.9);"><strong>AkiFruit</strong></a><button data-toggle="collapse"
+                style="color: rgba(255,255,255,0.9);"><img src="/static/img/Logo.svg" width="30" height="30"
+                    alt="Logo AkiFruits"><strong>AkiFruit</strong></a><button data-toggle="collapse"
                 class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
                     class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
@@ -32,7 +30,7 @@
 
 
     {% endblock %}
-    
+
     <footer class="footer-basic fixed-bottom">
         <p class="copyright">TecNM Campus Colima © 2021</p>
     </footer>

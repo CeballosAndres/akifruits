@@ -4,12 +4,13 @@
 {% block body %}
 
 <body>
-    <div class="container mt-5 pt-5" style="text-align: center;">
+    <div class="container mt-2 pt-5" style="text-align: center;">
         <img src="/static/img/Logo.png" alt="Logo">
         <h1 class="app-title mb-4"><b>AkiFruit</b></h1>
-        <caption>Te damos la bienvenida al sistema experto en frutos. <br> Piensa en una fruta y 
-            <strong>AkiFruit</strong> tratará de adivinarla con una serie de preguntas!</caption>
-        <div><a class="btn btn-primary btn-lg border rounded-pill mt-5" href="{{ url_for('game') }}">Jugar!</a></div>
+        <caption>Te damos la bienvenida al sistema experto en frutos. </caption>
+        <div><a class="btn btn-primary btn-lg border rounded-pill mt-3" href="{{ url_for('game') }}">Jugar!</a></div>
+        <caption>Piensa en una fruta y
+            <caption><strong>AkiFruit</strong> tratará de adivinarla con una serie de preguntas!</caption>
     </div>
 </body>
 

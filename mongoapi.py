@@ -61,21 +61,21 @@ if __name__ == "__main__":
     db.collection.drop()
 
     dataLeft = {
-        "text": "manzana",
-        "img": "link:manzana",
+        "text": "fresa",
+        "img": "https://pixabay.com/get/g8469cf79723db7ff919ec3152b38dd3132d0258bb9563968ef698a0c0110a2fe515fc0369af3b81cefbe3af46d313024_640.jpg",
     }
 
     nLeft = db.write({"document": dataLeft})
 
     dataRight = {
-        "text": "platano",
-        "img": "link:platano",
+        "text": "jícama",
+        "img": "https://pixabay.com/get/g50eaab83c66d05532fede4f7e221edf77ca52e00111c2868ec1a6e607a16b57ed8c6e8c1c60682422b59013628bd1431_640.jpg",
     }
 
     nRight = db.write({"document": dataRight})
 
     root = {
-        "text": "es rojo",
+        "text": "es dulce",
         "nLeft": nLeft['Document_ID'],
         "nRight": nRight['Document_ID'],
         "root": "true"
