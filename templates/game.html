@@ -3,7 +3,7 @@
 
 {% block body %}
 <body>
-<div class="container mt-3 pt-5" style="text-align: center;">
+<div class="container text-center mt-3 pt-5">
     <h5>Pregunta <strong id="question-number">1</strong></h5>
     <h2 class="mb-4">¿Tu fruto <strong id="text">{{ current_node.text }}</strong>?</h2>
     <p class="without-nodes" id="scientific-name-p" style="display: none;">Nombre científico <i id="scientific-name"></i></p>
@@ -13,7 +13,7 @@
 
         
         <div class="btn-group-vertical mt-2 mb-2" role="group">
-            <button onclick="getNextNode('yes');" class="btn btn-success my-btn" id="yes"> Si  </button>
+            <button onclick="getNextNode('yes');" class="btn btn-success my-btn" id="yes"> Sí  </button>
             <button onclick="getNextNode('no');" class="btn btn-danger my-btn" id="no"> No  </button>
             <button onclick="saveNode();"class="btn btn-primary bg-secondary my-btn" id="nose">No sé</button>
         </div>

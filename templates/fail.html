@@ -5,7 +5,7 @@
 {% block body %}
 
 <body>
-    <div class="container mt-2 pt-5" style="text-align: center;">
+    <div class="container  text-center mt-2 pt-5">
         <form method="post">
 
             <div class="container col-md-6">
@@ -17,7 +17,7 @@
                 <label for="new-fruit-characteristic">¿Qué <strong>característica </strong>tiene esa fruta que <strong>no
                 </strong>tenga (el/la) {{ current_node.text }} ?</label>
                 <input type="text" class="form-control mt-1" name="new-fruit-characteristic" placeholder="Característica" required>
-                <button class="btn btn-primary btn-lg border rounded-pill mt-3" type="submit">Guardar</button>
+                <button class="btn btn-info btn-lg border rounded-pill mt-3" type="submit">Guardar</button>
             </div>
         </form>
     </div>
