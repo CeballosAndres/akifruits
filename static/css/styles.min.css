@@ -3,15 +3,11 @@ html, body {
   }
 
 .container{
-    min-height: 90%;
+    min-height: 80%;
 }
 
 .footer-basic{
-    position: relative;
-    margin-top: -130px; /* negative value of footer height */
-    height: 40px;
     clear:both;
-    padding-top:20px;
     text-align: center;
     font-size: small;
     color:#919191}
